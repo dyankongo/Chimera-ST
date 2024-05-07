@@ -52,7 +52,7 @@ generate_pid=$!
 SUICIDE_CODE='chimera/tools/auto-generate-suicide.code'
 
 # Train on WMT data
-python3 fairseq_cli/train.py \
+python3 fairseq_cli/train.py $WMT_ROOT/bin \
     --task translation \
     --train-subset train --valid-subset valid \
     --save-dir $SAVE_DIR \
