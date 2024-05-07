@@ -136,7 +136,7 @@ def process(args):
             folder = f"en-{lang}-triplet"
         else:
             folder = f"en-{lang}"
-        cur_root = op.join(args.data_root, f"en-{lang}")
+        cur_root = "/kaggle/working/sample/speech_data/mustc/en-de"
         if not op.isdir(cur_root):
             logger.info(f"{cur_root} does not exist. Skipped.")
             continue
