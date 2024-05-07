@@ -8,6 +8,13 @@ import argparse
 import logging
 import sys
 import os
+
+
+os.environ['PYTHONPATH'] = f"{os.environ.get('PYTHONPATH', '')}:/kaggle/working/sample"
+os.environ['PATH'] = os.getenv("PATH") + os.pathsep + "/kaggle/working/sample"
+sys.path.append("/kaggle/working/sample")
+
+
 import os.path as op
 import shutil
 from itertools import groupby
@@ -270,7 +277,7 @@ def process(args):
         )
 
         # Clean up
-        shutil.rmtree(feature_root, ignore_errors=True)
+        # shutil.rmtree(feature_root, ignore_errors=True)
 
 
 def main():
