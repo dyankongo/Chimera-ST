@@ -10,7 +10,7 @@ omegaconf==2.0.6
 tqdm==4.64.0
 editdistance==0.5.3
 regex==2021.11.10
-dataclasses==0.8
+dataclasses
 PyYAML==6.0
 typing-extensions==4.1.1
 importlib-resources==5.8.0
