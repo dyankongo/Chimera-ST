@@ -1,5 +1,8 @@
 #!/bin/bash
 
+export MUSTC_ROOT="speech_data/mustc"
+export WMT_ROOT="wmt_data"
+
 echo "appending mustc text train+test into wmt dir"
 
 lang1=$1
