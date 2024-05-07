@@ -1,5 +1,7 @@
 #!/bin/bash
 # Adapted from https://github.com/facebookresearch/MIXER/blob/master/prepareData.sh
+export PATH="$PATH:/kaggle/working/sample"
+export PYTHONPATH="$PYTHONPATH:/kaggle/working/sample"
 
 export version="wmt17"
 export devset="split-train"
@@ -154,7 +156,7 @@ for l in $src $tgt; do
 done
 if [[ $external == 'mustc' ]]; then
     test_set=tst-COMMON
-    file_head="$SCRIPTPATH/$MUSTC_ROOT/$src-$tgt/data/$test_set/txt/$test_set"
+    file_head="/kaggle/working/sample/speech_data/mustc/en-de/data/$test_set/txt/$test_set"
     echo "pre-processing MUST-C test data..."
     for l in $src $tgt; do
         cat $file_head.$l | \
