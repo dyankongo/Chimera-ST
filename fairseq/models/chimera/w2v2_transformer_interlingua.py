@@ -3,9 +3,9 @@
 import logging
 import os
 import sys
-os.environ['PYTHONPATH'] = f"{os.environ.get('PYTHONPATH', '')}:/kaggle/working/sample"
-os.environ['PATH'] = os.getenv("PATH") + os.pathsep + "/kaggle/working/sample"
-sys.path.append("/kaggle/working/sample")
+# os.environ['PYTHONPATH'] = f"{os.environ.get('PYTHONPATH', '')}:/kaggle/working/sample"
+# os.environ['PATH'] = os.getenv("PATH") + os.pathsep + "/kaggle/working/sample"
+# sys.path.append("/kaggle/working/sample")
 import torch
 import torch.nn as nn
 from fairseq.data.data_utils import lengths_to_padding_mask
@@ -19,11 +19,16 @@ from fairseq.modules import (
     TransformerEncoderLayer,
 )
 # /kaggle/working/sample/fairseq/models/chimera
-from fairseq.models.chimera.w2v2_transformer import \
+current_directory = os.path.dirname(os.path.abspath(__file__))
+
+# Set the working directory
+os.chdir(current_directory)
+
+from .w2v2_transformer import \
     base_architecture, S2TTransformerModelW2V2, S2T_W2V2_TransformerEncoder
 from fairseq.models.speech_to_text.s2t_transformer import \
     TransformerDecoderScriptable
-from fairseq.models.chimera.chi_utils import update_dict_with_prefix
+from .chi_utils import update_dict_with_prefix
 
 
 logger = logging.getLogger(__name__)
